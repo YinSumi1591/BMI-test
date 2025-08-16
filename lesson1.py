@@ -49,8 +49,7 @@ if st.button('คำนวณ'):
         st.error(tt)
         st.image('BMI-Extremely Obese.png')
         word="มึงอ้วนเกินไปแล้ววว"
-
-else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
+    else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
 
 
 API_URL = "https://api-voice.botnoi.ai/openapi/v1/generate_audio"
