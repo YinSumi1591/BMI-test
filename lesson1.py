@@ -27,30 +27,30 @@ kg=st.number_input("น้ำหนัก(kg): ")
 cm=st.number_input("ส่วนสูง(cm):")
 
 if st.button('คำนวณ'):
-    bmi = kg / (cm/100)** 2
-    tt = f'ค่า BMI ของคุณคือ {bmi:.2f}'
-    if bmi < 18.90:
-        st.info(tt)
-        st.image('BMI-Underweight.png')
-        word="ผอมเกินไป"
-    elif bmi < 23:
-        st.success(tt)
-        st.image('BMI-Normal.png')
-        word="ปกติ"
-    elif bmi < 25:
-        st.warning(tt)
-        st.image('BMI-Overweight.png')
-        word="อ้วนนิดๆ"
-    elif bmi < 30:
-        st.error(tt)
-        st.image('BMI-Obese.png')
-        word="อ้วนไปหน่อย"
-    elif bmi < 35:
-        st.error(tt)
-        st.image('BMI-Extremely Obese.png')
-        word="มึงอ้วนเกินไปแล้ววว"
+    if kg != 0 and cm !=0:
+        bmi = kg / (cm/100)** 2
+        tt = f'ค่า BMI ของคุณคือ {bmi:.2f}'
+        if bmi < 18.90:
+            st.info(tt)
+            st.image('BMI-Underweight.png')
+            word="ผอมเกินไป"
+        elif bmi < 23:
+            st.success(tt)
+            st.image('BMI-Normal.png')
+            word="ปกติ"
+        elif bmi < 25:
+            st.warning(tt)
+            st.image('BMI-Overweight.png')
+            word="อ้วนนิดๆ"
+        elif bmi < 30:
+            st.error(tt)
+            st.image('BMI-Obese.png')
+            word="อ้วนไปหน่อย"
+        else:
+            st.error(tt)
+            st.image('BMI-Extremely Obese.png')
+            word="มึงอ้วนเกินไปแล้ววว"
     else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
-
 
 API_URL = "https://api-voice.botnoi.ai/openapi/v1/generate_audio"
 API_TOKEN = "SGsxeUd1wXuiu2UnLlakaNJHd4bbynSj"
