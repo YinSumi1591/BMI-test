@@ -49,8 +49,7 @@ if st.button('คำนวณ'):
         st.error(tt)
         st.image('BMI-Extremely Obese.png')
         word="มึงอ้วนเกินไปแล้ววว"
-    elif kg = 0 or cm = 0:
-        st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
+else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
 
     mp3_fp = io.BytesIO()
     tts.write_to_fp(mp3_fp)
