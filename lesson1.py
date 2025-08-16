@@ -45,10 +45,12 @@ if st.button('คำนวณ'):
         st.error(tt)
         st.image('BMI-Obese.png')
         word="อ้วนไปหน่อย"
-    else:
+    elif bmi < 35:
         st.error(tt)
         st.image('BMI-Extremely Obese.png')
         word="มึงอ้วนเกินไปแล้ววว"
+    else:
+        st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
 
 st.title("Botnoi Voice API Demo")
 
