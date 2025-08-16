@@ -1,5 +1,5 @@
 import streamlit as st
-from gtts import gTTS
+
 import io
 import requests
 from pathlib import Path
@@ -51,13 +51,6 @@ if st.button('คำนวณ'):
         st.image('BMI-Extremely Obese.PNG')
         word="มึงอ้วนเกินไปแล้ววว"
     
-
-    tts = gTTS(text=word, lang='th')
-    mp3_fp = io.BytesIO()
-    tts.write_to_fp(mp3_fp)
-    mp3_fp.seek(0)
-    st.audio(mp3_fp, format='audio/mp3')
-
 
 
 
