@@ -1,5 +1,4 @@
 import streamlit as st
-
 import io
 import requests
 from pathlib import Path
@@ -50,18 +49,6 @@ if st.button('คำนวณ'):
         st.error(tt)
         st.image('BMI-Extremely Obese.png')
         word="มึงอ้วนเกินไปแล้ววว"
-    
-
-
-
-
-
-
-
-
-
-
-
 
 st.title("Botnoi Voice API Demo")
 
