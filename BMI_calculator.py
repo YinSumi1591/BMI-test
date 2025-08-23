@@ -3,9 +3,21 @@ import io
 import requests
 from pathlib import Path
 
+
 # ChatGPT
 def askAI(question):
     from openai import OpenAI
+    client = OpenAI(api_key="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")
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",  # หรือ gpt-4o / o1-mini / o1-preview
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": question}] #จะถามไร
+        , max_tokens=200
+    )
+    return response.choices[0].message.content
+
+
 
 st.set_page_config(page_title='BODY MASS UNDEX : Web Application',page_icon='🏋️')
 st.header('*สวัสดีฮับ*')
@@ -51,18 +63,6 @@ if st.button('คำนวณ'):
             st.error(tt)
             st.image('BMI-Extremely Obese.png')
     else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
-
-
-# ChatGPT    
-    client = OpenAI(api_key="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")
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",  # หรือ gpt-4o / o1-mini / o1-preview
-        messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": question}] #จะถามไร
-        , max_tokens=200
-    )
-    return response.choices[0].message.content
 
     q=st.empty()
     q.write("รอผลวิเคราะสักครู่.....")
