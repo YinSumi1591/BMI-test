@@ -17,7 +17,9 @@ def askAI(question):
     )
     return response.choices[0].message.content
 
-
+    q.write("รอผลวิเคราะสักครู่.....")
+    question = f"บอกวิธีแก้คนที่มี BMI={bmi} ประมาณนี้"
+    q.write(askAI(question))
 
 st.set_page_config(page_title='BODY MASS UNDEX : Web Application',page_icon='🏋️')
 st.header('*สวัสดีฮับ*')
@@ -65,6 +67,4 @@ if st.button('คำนวณ'):
     else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
 
     q=st.empty()
-    q.write("รอผลวิเคราะสักครู่.....")
-    question = f"บอกวิธีแก้คนที่มี BMI={bmi} ประมาณนี้"
-    q.write(askAI(question))
+    
