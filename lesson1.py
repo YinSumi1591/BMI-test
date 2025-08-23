@@ -20,7 +20,7 @@ with col2:
 st.info("ผอม")
 st.success("ปกติ")
 st.warning("อ้วนระดับ 1")
-st.error("อ้วนระดับ 2 (อันที่เป็นสีีส้ม)")
+st.error("อ้วนระดับ 2 (อันที่เป็นสีส้ม)")
 st.error("อ้วนระดับ 3")
 
 kg=st.number_input("น้ำหนัก(kg): ")
