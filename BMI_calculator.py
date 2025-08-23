@@ -7,7 +7,7 @@ from pathlib import Path
 # ChatGPT
 def askAI(question):
     from openai import OpenAI
-    client = OpenAI(api_key="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")
+    client = OpenAI(api_key="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")
     response = client.chat.completions.create(
         model="gpt-4o-mini",  # หรือ gpt-4o / o1-mini / o1-preview
         messages=[
