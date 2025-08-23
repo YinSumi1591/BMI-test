@@ -58,7 +58,11 @@ if st.button('คำนวณ'):
 
         if generate_btn:
             payload = {
-                "text": word,
+                "text": if bmi < 18.90: "ผอมเกินไป"
+                        elif bmi < 23: "ปกติ"
+                        elif bmi < 25:"อ้วนนิดๆ"
+                        elif bmi < 30: "อ้วนไปหน่อย"
+                        else: "มึงอ้วนเกินไปแล้ววว",
                 "speaker": speaker_id,
                 "volume": 1,
                 "speed": 1,
@@ -67,13 +71,11 @@ if st.button('คำนวณ'):
                 "language": "th",                    
                 "page": "user"
             }
-
             headers = {
                  "accept": "application/json",
                  "Content-Type": "application/json",
                  "botnoi-token": API_TOKEN
             }
-
             try:
                 res = requests.post(API_URL, json=payload, headers=headers, timeout=30)
                 res.raise_for_status()
@@ -100,3 +102,15 @@ if st.button('คำนวณ'):
                 st.error(f"เกิดข้อผิดพลาด: {e}")
             
     else: st.error("PLEASE! go type your bmi numbers before press 'Button' here.")
+
+
+
+# ChatGPT
+client = OpenAI(api_key="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")
+response = client.chat.completions.create(
+    model="gpt-4o-mini",  # หรือ gpt-4o / o1-mini / o1-preview
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "บอกวิธีแก้คนที่ BMI = {bmi} นี้"} #จะถามไร]
+    , max_tokens=200)
+print(response.choices[0].message.content)
