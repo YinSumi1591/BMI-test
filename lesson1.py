@@ -112,5 +112,5 @@ response = client.chat.completions.create(
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "บอกวิธีแก้คนที่ BMI = {bmi} นี้"} #จะถามไร]
-    , max_tokens=200)]
+    , max_tokens=200
 print(response.choices[0].message.content)
