@@ -58,11 +58,11 @@ if st.button('คำนวณ'):
 
         if generate_btn:
             payload = {
-                "text": if bmi < 18.90: "ผอมเกินไป"
-                        elif bmi < 23: "ปกติ"
-                        elif bmi < 25:"อ้วนนิดๆ"
-                        elif bmi < 30: "อ้วนไปหน่อย"
-                        else: "มึงอ้วนเกินไปแล้ววว",
+                "text": if bmi < 18.90: text="ผอมเกินไป"
+                        elif bmi < 23: text="ปกติ"
+                        elif bmi < 25: text="อ้วนนิดๆ"
+                        elif bmi < 30: text="อ้วนไปหน่อย"
+                        else: text="มึงอ้วนเกินไปแล้ววว",
                 "speaker": speaker_id,
                 "volume": 1,
                 "speed": 1,
